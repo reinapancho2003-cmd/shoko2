@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOKO 3D - Impresiones 3D</title>
+    <style>
+        /* Estilos Generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f9f6f0;
+            color: #333;
+        }
+
+        /* Header / Navegación */
+        header {
+            background-color: #f7941d;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Representación CSS del logo del perrito 3D */
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #f7941d;
+            border: 3px solid #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffe6b3;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #f7941d;
+            color: white;
+            text-align: center;
+            padding: 50px 20px 60px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 25px;
+            line-height: 1.5;
+        }
+
+        .btn-ver-mas {
+            background-color: #ffffff;
+            color: #f7941d;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-ver-mas:hover {
+            background-color: #fff4e6;
+            transform: translateY(-2px);
+        }
+
+        /* Categorías / Productos Destacados */
+        .content-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 26px;
+            color: #f7941d;
+            margin-bottom: 30px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 2px solid #ffe6cc;
+        }
+
+        .card-img-placeholder {
+            width: 100%;
+            height: 140px;
+            background-color: #ffd8a8;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Banner Pedidos */
+        .cta-banner {
+            background-color: #ffb84d;
+            color: #5a2a00;
+            text-align: center;
+            padding: 40px 20px;
+            margin: 50px 0;
+            border-radius: 15px;
+        }
+
+        .cta-banner h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        /* Footer / Contacto */
+        footer {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 40px 20px;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-col h4 {
+            color: #f7941d;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-col p, .footer-col ul {
+            font-size: 14px;
+            line-height: 1.8;
+            list-style: none;
+        }
+
+        .footer-col a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header con Menú -->
+    <header role="banner">
+        <div class="logo-container">
+            <div class="logo-icon">🐶</div>
+            <div class="logo-text">SHOKO 3D</div>
+        </div>
+        <nav role="navigation">
+            <a href="#inicio">INICIO</a>
+            <a href="#productos">PRODUCTOS</a>
+            <a href="#juguetes">JUGUETES</a>
+            <a href="#contacto">CONTACTO</a>
+        </nav>
+    </header>
+
+    <!-- Sección Principal (Hero) -->
+    <section id="inicio" class="hero">
+        <h1>SHOKO 3D</h1>
+        <p>Somos un emprendimiento de impresiones 3D. Podés encontrar un montón de juguetes y accesorios para todos.</p>
+        <a href="#productos" class="btn-ver-mas">VER MÁS..</a>
+    </section>
+
+    <!-- Productos / Categorías -->
+    <section id="productos" class="content-section">
+        <h2 class="section-title">Productos Destacados</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-img-placeholder">🧸</div>
+                <h3>Juguetes</h3>
+                <p>Figuras articuladas y coleccionables.</p>
+            </div>
+            <div class="card">
+                <div class="card-img-placeholder">🏠</div>
+                <h3>Decoración</h3>
+                <p>Macetas, lámparas y adornos para el hogar.</p>
+            </div>
+            <div class="card">
+                <div class="card-img-placeholder">🐲</div>
+                <h3>Figuras</h3>
+                <p>Personajes de anime, cómics y cine.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner "Lo que imagines" -->
+    <div class="content-section">
+        <div class="cta-banner">
+            <h2>LO QUE IMAGINES<br>LO PODEMOS CREAR</h2>
+            <p style="margin-top: 10px;">Hacé tu pedido personalizado acá.</p>
+        </div>
+    </div>
+
+    <!-- Pie de página / Contacto -->
+    <footer id="contacto">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Sobre Nosotros</h4>
+                <p>Emprendimiento dedicado al diseño e impresión 3D en Berisso, Argentina[cite: 3].</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Sobre nosotros</a></li>
+                    <li><a href="#contacto">Servicio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p>📱 Cel: 2216030322[cite: 3]</p>
+                <p>📍 Berisso, Argentina[cite: 3]</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 SHOKO 3D - NTICx 4° Año[cite: 5, 7]. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
