@@ -1,21 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,100">
-    <title>SHOKO 3D - Impresiones 3D</title> 
-    <style> <img src="shoko logo png.png" alt="Shoko 3D Logo" class="logo-img">
-        <img class="responsive-img" src="cool_pic.jpg">
-            <nav>
-                <a href="#inicio">Inicio</a>
-                <a href="#productos">Productos</a>
-                <a href="#contacto">Contacto</a>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOKO 3D - Impresiones 3D</title>
+    <style>
         /* Estilos Generales */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: time new romans 
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
@@ -26,11 +22,14 @@
         /* Header / Navegación */
         header {
             background-color: #f7941d;
-            padding: 15px 30px;
+            padding: 12px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .logo-container {
@@ -39,23 +38,16 @@
             gap: 12px;
         }
 
-        /* Representación CSS del logo del perrito 3D */
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            background-color: #fff;
+        .logo-img {
+            height: 40px;
+            width: auto;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #f7941d;
-            border: 3px solid #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: #fff;
+            padding: 2px;
         }
 
         .logo-text {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: #ffffff;
             letter-spacing: 1px;
@@ -79,13 +71,13 @@
             background-color: #f7941d;
             color: white;
             text-align: center;
-            padding: 50px 20px 60px;
+            padding: 45px 20px 60px;
             border-bottom-left-radius: 30px;
             border-bottom-right-radius: 30px;
         }
 
         .hero h1 {
-            font-size: 38px;
+            font-size: 40px;
             margin-bottom: 15px;
             color: #ffffff;
         }
@@ -100,11 +92,12 @@
         .btn-ver-mas {
             background-color: #ffffff;
             color: #f7941d;
-            padding: 12px 30px;
+            padding: 12px 32px;
             text-decoration: none;
             border-radius: 25px;
             font-weight: bold;
             display: inline-block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.2s, background-color 0.2s;
         }
 
@@ -116,13 +109,13 @@
         /* Categorías / Productos Destacados */
         .content-section {
             max-width: 1000px;
-            margin: 40px auto;
+            margin: 50px auto;
             padding: 0 20px;
         }
 
         .section-title {
             text-align: center;
-            font-size: 26px;
+            font-size: 28px;
             color: #f7941d;
             margin-bottom: 30px;
         }
@@ -130,59 +123,79 @@
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .card {
             background-color: #ffffff;
             border-radius: 15px;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
             border: 2px solid #ffe6cc;
+            transition: transform 0.2s;
         }
 
-        .card img{
-            width: 100%;
+        .card:hover {
+            transform: translateY(-5px);
         }
 
-        .card-img-placeholder {
+        .card img {
             width: 100%;
-            height: 140px;
-            background-color: #ffd8a8;
+            height: 220px;
+            object-fit: cover;
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
             margin-bottom: 15px;
         }
 
         .card h3 {
             color: #333;
-            margin-bottom: 10px;
+            font-size: 20px;
+            margin-bottom: 5px;
         }
 
         /* Banner Pedidos */
         .cta-banner {
-            background-color: #ffb84d;
-            color: #5a2a00;
-            text-align: center;
-            padding: 40px 20px;
-            margin: 50px 0;
-            border-radius: 15px;
+            background-color: #f7941d;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 35px 25px;
+            border-radius: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 6px 15px rgba(247, 148, 29, 0.25);
         }
 
-        .cta-banner h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
+        .cta-banner img {
+            width: 140px;
+            height: auto;
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        .cta-text {
+            text-align: left;
+            max-width: 500px;
+        }
+
+        .cta-text h2 {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .cta-text p {
+            font-size: 18px;
         }
 
         /* Footer / Contacto */
         footer {
             background-color: #333333;
             color: #ffffff;
-            padding: 40px 20px;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
         }
 
         .footer-container {
@@ -209,6 +222,11 @@
         .footer-col a {
             color: #ddd;
             text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: #f7941d;
         }
 
         .copyright {
@@ -226,78 +244,84 @@
     <!-- Header con Menú -->
     <header role="banner">
         <div class="logo-container">
-            <div class="logo-icon"><div class="logo-container">
             <img src="shoko logo png.png" alt="Shoko 3D Logo" class="logo-img">
-            <img src="shoko logo png.png" wild 50  height 50
-            <nav></div>
             <div class="logo-text">SHOKO 3D</div>
         </div>
         <nav role="navigation">
             <a href="#inicio">INICIO</a>
             <a href="#productos">PRODUCTOS</a>
-    
             <a href="#contacto">CONTACTO</a>
         </nav>
     </header>
 
     <!-- Sección Principal (Hero) -->
     <section id="inicio" class="hero">
-        <h1>SHOKO 3D</h1> 
+        <h1>SHOKO 3D</h1>
         <p>Somos un emprendimiento de impresiones 3D. Podés encontrar un montón de juguetes y accesorios para todos.</p>
-        <a href="#productos" class="btn-ver-mas">VER MÁS..</a>
+        <a href="#productos" class="btn-ver-mas">VER MÁS</a>
     </section>
 
     <!-- Productos / Categorías -->
-   <section id="productos" class="content-section">
+    <section id="productos" class="content-section">
         <h2 class="section-title">Productos Destacados</h2>
         <div class="cards-grid">
             <div class="card">
                 <img src="ef9e4122c3f9b07a.webp" alt="Juguetes articulados">
-                <h3>Juguetes </h3> 
+                <h3>Juguetes</h3>
+            </div>
             <div class="card">
                 <img src="8183ce7175b6dd9e.webp" alt="Decoración 3D">
-                <h3>Decoracion</h3> 
+                <h3>Decoración</h3>
             </div>
             <div class="card">
                 <img src="2024-05-10_1ad4105e1755e.webp" alt="Figuras coleccionables">
                 <h3>Figuras</h3>
-                
             </div>
+            <div class="card">
+                <img src="88d7c49bd518d2ad.webp" alt="Accesorios 3D">
+                <h3>Accesorios</h3>
+            </div>
+        </div>
     </section>
 
     <!-- Banner "Lo que imagines" -->
     <div class="content-section">
-       <div style="background-color: #f7941e; color: white; display: flex; align-items: center; justify-content: center; gap: 30px; padding: 40px 20px; margin: 40px auto; max-width: 1000px; border-radius: 20px; flex-wrap: wrap;">
-    <img src="SHOKO FELIZ _2.png" alt="Shoko Feliz" style="width: 150px; height: auto;">
-    <div style="text-align: left;">
-        <h2 style="font-size: 28px; margin-bottom: 10px;">LO QUE IMAGINES LO PODEMOS CREAR</h2>
-        <p style="font-size: 18px; margin: 0;">Hacé tu pedido acá</p>
-    </div>
-</div>
+        <div class="cta-banner">
+            <img src="SHOKO FELIZ .png" alt="Shoko Feliz">
+            <div class="cta-text">
+                <h2>LO QUE IMAGINES LO PODEMOS CREAR</h2>
+                <p>Hacé tu pedido personalizado por WhatsApp o Instagram.</p>
+            </div>
+        </div>
     </div>
 
     <!-- Pie de página / Contacto -->
     <footer id="contacto">
         <div class="footer-container">
             <div class="footer-col">
-                <h4>Sobre Nosotros
-               </h4> 
+                <h4>Shoko 3D</h4>
+                <p>Impresiones 3D personalizadas,<br>juguetes articulados y figuras.</p>
             </div>
             <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul>
                     <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#productos">Sobre nosotros</a></li>
-                    <li><a href="#contacto">Servicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Contacto</h4>
-                <p> Cel: 2216030322 </p>
-                <p> Berisso, Argentina</p>
-                <p> Instagram Shoko_3d </p>
-                <p> Mercado Libre </p>
+                <p>Cel: 2216030322</p>
+                <p>Berisso, Argentina</p>
+                <p>Instagram: @shoko_3d</p>
+                <p>Mercado Libre</p>
             </div>
         </div>
-
+        <div class="copyright">
+            <p>&copy; 2026 SHOKO 3D - Todos los derechos reservados</p>
+        </div>
+    </footer>
 
 </body>
 </html>
